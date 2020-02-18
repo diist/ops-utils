@@ -5,4 +5,7 @@ RUN apt-get update \
     ca-certificates \
     jq \
     curl \
+    iputils-ping \
+    netcat \
+    dnsutils \
  && rm -rf /var/lib/apt/lists/
