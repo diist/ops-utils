@@ -8,6 +8,7 @@ RUN apt-get update \
     iputils-ping \
     netcat \
     dnsutils \
+    zip \
  && rm -rf /var/lib/apt/lists/
 
 CMD ["sleep", "3600"]

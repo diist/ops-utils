@@ -1,0 +1,23 @@
+FROM diist/ops-utils:latest
+
+WORKDIR /install
+
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+ && unzip awscliv2.zip \
+ && ./aws/install \
+ && rm -rf awscliv2.zip aws
+
+ENV TERRAFORM_VERSION 0.12.23
+RUN curl "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" -o "terraform.zip" \
+ && unzip terraform.zip \
+ && mv terraform /usr/local/bin/ \
+ && rm terraform.zip
+
+ENV KUBECTL_VERSION 1.17.4
+RUN curl -LO "https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl" \
+ && chmod +x kubectl \
+ && mv kubectl /usr/local/bin
+
+WORKDIR /root
+CMD ["sleep", "3600"]
+
