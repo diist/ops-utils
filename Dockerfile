@@ -9,6 +9,7 @@ RUN apt-get update \
     netcat \
     dnsutils \
     zip \
+    make \
  && rm -rf /var/lib/apt/lists/
 
 CMD ["sleep", "3600"]
