@@ -1,4 +1,4 @@
-FROM diist/ops-utils:latest
+FROM diist/ops-utils:6
 
 WORKDIR /install
 

@@ -10,6 +10,8 @@ RUN apt-get update \
     dnsutils \
     zip \
     make \
+    ssh \
+    git \
  && rm -rf /var/lib/apt/lists/
 
 CMD ["sleep", "3600"]
