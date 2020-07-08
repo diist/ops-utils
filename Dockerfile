@@ -12,6 +12,7 @@ RUN apt-get update \
     make \
     ssh \
     git \
+    vim \
  && rm -rf /var/lib/apt/lists/
 
 CMD ["sleep", "3600"]
